@@ -14,11 +14,10 @@ class CustomBaggingClassifier(BaseEstimator, ClassifierMixin):
         """
         Parameters
         ----------
-        base_estimator : object or None, optional (default=None)     The base estimator to fit on random subsets of the dataset. If None, then the base estimator is a decision tree.
-        n_estimators : int, optional (default=10)                     The number of base estimators in the ensemble.
-        random_state : int, RandomState instance or None, optional (default=None)  Controls the randomness of the 
-            estimator. The features are always randomly permuted at each split, even if splitter is set to "best". 
-            When max_features < n_features, the algorithm will select max_features at random at each split before finding the best split among them. But the best found split may vary across different runs, even if max_features=n_features. That is the case, if the improvement of the criterion is identical for several splits and one split has to be selected at random. To obtain a deterministic behaviour during fitting, random_state has to be fixed to an integer.
+        base_estimator : object or None, optional (default=None)    The base estimator to fit on random subsets of the dataset. 
+                                                                    If None, then the base estimator is a decision tree.
+        n_estimators : int, optional (default=10)                   The number of base estimators in the ensemble.
+        random_state : int or None, optional (default=None)         Controls the randomness of the estimator. 
         """
 
         #TODO: ...
@@ -31,8 +30,8 @@ class CustomBaggingClassifier(BaseEstimator, ClassifierMixin):
         
         Parameters
         ----------
-        X : ndarray of shape (n_samples, n_features)                  The input samples.
-        y : ndarray of shape (n_samples,)                             The target values.
+        X : ndarray of shape (n_samples, n_features)                 The input samples.
+        y : ndarray of shape (n_samples,)                            The target values.
         
         Returns
         -------
@@ -58,11 +57,11 @@ class CustomBaggingClassifier(BaseEstimator, ClassifierMixin):
         
         Parameters
         ----------
-        X : ndarray of shape (n_samples, n_features)                  The input samples.
+        X : ndarray of shape (n_samples, n_features)                 The input samples.
         
         Returns
         -------
-        pred : ndarray of shape (n_samples,)                          The predicted classes.
+        pred : ndarray of shape (n_samples,)                         The predicted classes.
         """
 
         # Check is fit had been called
@@ -82,12 +81,12 @@ class CustomBaggingClassifier(BaseEstimator, ClassifierMixin):
 
         Parameters
         ----------
-        X : ndarray of shape (n_samples, n_features)      The input samples.
+        X : ndarray of shape (n_samples, n_features)                 The input samples.
 
         Returns
         -------
-        probas : ndarray of shape (n_samples, n_classes)  The class probabilities of the input samples. The order of 
-            the classes corresponds to that in the attribute classes_.
+        probas : ndarray of shape (n_samples, n_classes)             The class probabilities of the input samples. The order of 
+                                                                     the classes corresponds to that in the attribute classes_.
         """
 
         # Check is fit had been called
